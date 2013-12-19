@@ -2,16 +2,21 @@
 elgg_register_event_handler('init', 'system', 'activity_to_home');
 
 function activity_to_home() {	
-	elgg_unregister_page_handler('activity');
+    elgg_unregister_page_handler('activity');
     elgg_register_page_handler('home', 'activity_to_home_page_handler');
-	elgg_unregister_menu_item('site', 'activity');
+    elgg_register_page_handler('activity', 'activity_to_home_page_fix');
+
+    elgg_unregister_menu_item('site', 'activity');
     elgg_register_menu_item('site', array(
         'name' => 'home',
         'text' => elgg_echo('home'),
         'href' => '/home',
-     ));
+        'priority' => 1,
+   ));
 }
-
+function activity_to_home_page_fix($page){
+ forward('/home');	
+}
 function activity_to_home_page_handler(){
 	$file = elgg_get_plugins_path().'activitytohome/';
 
