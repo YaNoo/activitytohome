@@ -1,4 +1,4 @@
-Activitytohome
+ActivityToHome
 ==============
 
 Change Activity to Home from Languages and urls.
