@@ -17,7 +17,7 @@ function activity_to_home() {
 function activity_to_home_page_fix($page){
  forward('/home');	
 }
-function activity_to_home_page_handler(){
+function activity_to_home_page_handler($page){
 	$file = elgg_get_plugins_path().'activitytohome/';
 
 	elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
