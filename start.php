@@ -11,8 +11,16 @@ function activity_to_home() {
         'name' => 'home',
         'text' => elgg_echo('home'),
         'href' => '/home',
+        'priority' => 0,
+   ));
+   elgg_register_menu_item('site', array(
+        'name' => 'discussions',
+        'text' => elgg_echo('discussions'),
+        'href' => '/discussion/all',
         'priority' => 1,
    ));
+
+
 }
 function activity_to_home_page_fix($page){
  forward('/home');	
